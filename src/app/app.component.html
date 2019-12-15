@@ -1,40 +1,13 @@
-<h1>Hello Angular World!</h1>
-<hr>
+<div class="container">
 
-<input type="text" [(ngModel)]="title1">
-<p><strong>{{ title1 }}</strong></p>
+  <h1>Angular Components</h1>
 
-<br>
-<br>
-<hr>
+  <app-post-form></app-post-form>
 
-<input
-  type="text"
-  (keyup.enter)="onInput($event)"
-  (blur)="onBlur(myInput.value)"
-  #myInput
->
-<p><strong>{{ inputValue }}</strong></p>
-<p>{{title}}</p>
+  <hr />
 
+  <app-post
+    *ngFor="let p of posts" [post]="p"
+  ></app-post>
 
-
-
-
-<img [src]="img" alt="Angular vs React">
-
-<p><strong> {{ number }} </strong></p>
-<p><strong> {{ arr }} </strong></p>
-<p><strong> {{ obj }} </strong></p>
-<p><strong> {{ obj.a }} </strong></p>
-<p><strong> {{ obj.c.m }} </strong></p>
-<p><strong> {{ 'Hello' + ' world!' }} </strong></p>
-
-
-<hr>
-
-<app-post></app-post>
-
-<hr>
-<app-post4></app-post4>
-
+</div>
