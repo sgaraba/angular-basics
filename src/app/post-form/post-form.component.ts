@@ -14,8 +14,10 @@ export class PostFormComponent implements OnInit {
 
   title: string;
   text: string;
+  idCounter: number;
 
   constructor() {
+    this.idCounter = 3;
   }
 
   ngOnInit() {
@@ -23,7 +25,7 @@ export class PostFormComponent implements OnInit {
 
   addPost() {
     if (this.title.trim() && this.text.trim()) {
-      const post: Post = {title: this.title, text: this.text};
+      const post: Post = new Post(++this.idCounter, this.title, this.text);
       this.onAdd.emit(post);
       this.title = '';
       this.text = '';
