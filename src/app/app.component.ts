@@ -17,4 +17,9 @@ export class AppComponent {
     {id: 2, title: 'Dogs', text: 'Kuzya is not a dog. It is a crazy cat!'},
     {id: 3, title: 'Post 3', text: 'Text Text Text 3'}
   ];
+
+  updatePost(post: Post) {
+    console.log('Post :', post);
+    this.posts.unshift(post);
+  }
 }
