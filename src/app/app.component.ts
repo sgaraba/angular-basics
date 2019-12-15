@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 export class Post {
   private id?: number;
@@ -42,12 +42,18 @@ export class Post {
   styleUrls: ['./app.component.scss']
 })
 
-export class AppComponent {
+export class AppComponent implements OnInit {
   posts: Post[] = [
     new Post(1, 'Cats', 'Kuzya is a crazy cat!'),
     new Post(2, 'Dogs', 'Kuzya is not a dog. It is a crazy cat!'),
     new Post(3, 'Post 3', 'Text Text Text 3')
   ];
+
+  ngOnInit(): void {
+    setTimeout(() => {
+      this.posts[0] = new Post(1, 'Changed', 'Kuzy is changed');
+    }, 5000);
+  }
 
   updatePost(post: Post) {
     console.log('Post :', post);
