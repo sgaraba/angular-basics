@@ -9,5 +9,7 @@ export class AppComponent {
   e: number = Math.E;
 
   str: string = 'hello world';
+
+  date: Date = new Date();
 }
 
