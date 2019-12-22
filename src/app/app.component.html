@@ -1,5 +1,15 @@
 <div class="container">
   <h1>Angular Pipes</h1>
+
+  <button class="btn" (click)="searchFiled = 'title'">Title</button>
+  <button class="btn" (click)="searchFiled = 'text'">Text</button>
+  <input type="text" [(ngModel)]="search">
+
+  <div *ngFor="let post of posts | filter:search:searchFiled" class="card">
+    <h2> {{ post.title }} </h2>
+    <p> {{ post.text }} </p>
+  </div>
+
   <p>
     {{ e | number:'1.1-5' }}
   </p>

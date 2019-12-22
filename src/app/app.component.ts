@@ -1,5 +1,14 @@
 import { Component } from '@angular/core';
 
+export class Post {
+  title: string;
+  text: string;
+  constructor(title: string, text: string) {
+    this.title = title;
+    this.text = text;
+  }
+}
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -20,5 +29,14 @@ export class AppComponent {
       }
     }
   };
+
+  search = '';
+  searchFiled = 'title';
+
+  posts: Post[] = [
+    new Post("Beer", "The best beer in the world,"),
+    new Post("Bread", "The best bread in the world,"),
+    new Post("JavaScript", "The best language in the world,")
+  ];
 }
 
