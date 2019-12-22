@@ -38,5 +38,9 @@ export class AppComponent {
     new Post("Bread", "The best bread in the world,"),
     new Post("JavaScript", "The best language in the world,")
   ];
+
+  addPost() {
+    this.posts.unshift(new Post("Angular 8", "Angular best frontend platform."));
+  }
 }
 
