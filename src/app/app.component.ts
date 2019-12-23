@@ -33,4 +33,19 @@ export class AppComponent implements OnInit {
       console.log('Form data ; ', formData);
     }
   }
+
+  setCapital() {
+    const cityMap = {
+      ru: 'Moskow',
+      ua: 'Kiev',
+      by: 'Minsk'
+    };
+    const cityKey = this.form.get('address').get('country').value;
+    this.form.patchValue({
+        address: {
+          city: cityMap[cityKey]
+        }
+      }
+    );
+  }
 }
