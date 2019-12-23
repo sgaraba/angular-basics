@@ -16,6 +16,10 @@
         <small *ngIf="form.get('email').errors.email">
           Enter valid email
         </small>
+
+        <small *ngIf="form.get('email').errors.restrictedEmail">
+          Email {{ form.get('email').value }} not permited
+        </small>
       </div>
     </div>
 
