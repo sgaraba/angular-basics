@@ -8,4 +8,11 @@
     <button class="btn" (click)="appCounterService.decreas()">-</button>
   </div>
 
+
+  <div class="card">
+    <h2>Local counter: {{localCounterService.counter}}</h2>
+
+    <button class="btn" (click)="localCounterService.increas()">+</button>
+    <button class="btn" (click)="localCounterService.decreas()">-</button>
+  </div>
 </div>
